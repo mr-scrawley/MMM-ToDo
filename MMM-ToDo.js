@@ -130,7 +130,7 @@ Module.register("MMM-ToDo",{
 			var oneDay = oneHour * 24;
 
 			if(typeof this.tasks[i].due !== "undefined") {
-				var dateValue = this.tasks[i].due.val;
+				var dateValue = this.tasks[i].due;
 				var datePrefix = this.translate("COMPLETE") + " ";
 			} else if(typeof this.tasks[i].start !== "undefined") {
 				var dateValue = this.tasks[i].start;
@@ -338,7 +338,7 @@ Module.register("MMM-ToDo",{
 		if (typeof taskA.due === 'undefined' && typeof taskB.due !== 'undefined') return 1
 		if (typeof taskA.due !== 'undefined' && typeof taskB.due === 'undefined') return -1
 		if (typeof taskA.due === 'undefined' && typeof taskB.due === 'undefined') return 0
-		return moment(taskA.due.val).diff(moment(taskB.due.val));
+		return moment(taskA.due).diff(moment(taskB.due));
 	},
 
 	// Comparator proxy to compare two tasks by start date in ascending order

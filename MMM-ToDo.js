@@ -90,7 +90,11 @@ Module.register("MMM-ToDo",{
 				symbolWrapper.className = "symbol align-right";
 
 				var symbol = document.createElement("span");
-				symbol.className = "fas fa-fw fa-" + this.config.defaultSymbol;
+				if (this.config.calendar.symbol) {
+					symbol.className = "fas fa-fw fa-" + this.config.calendar.symbol;
+				} else {
+					symbol.className = "fas fa-fw fa-" + this.config.defaultSymbol;
+				}
 				if (this.config.useColorLegend) {
 					symbol.style = "color: " + this.priority2color(this.tasks[i].priority) + ";";
 				}

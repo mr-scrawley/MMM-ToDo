@@ -97,6 +97,7 @@ The following properties can be configured:
 | `hideTime`                   | Hide the column showing the creation time  <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `dateFormat`                 | Format to use for the date of tasks (when using absolute dates) <br><br> **Possible values:** See [Moment.js formats](http://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `'MMM Do'` (e.g. Jan 18th)
 | `initialLoadDelay`           | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:**  `0`
+| `showPrefix`                 | Show prefix text indicating the type of date that is being displayed (start, due, created). <br> **Default value:** `true`
 | `calendar`                 	 | The department number (metropolitan france only). <br><br>  This value is **REQUIRED**
 
 ### Calendar configuration

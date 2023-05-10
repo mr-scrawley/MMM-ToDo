@@ -26,6 +26,7 @@ Module.register("MMM-ToDo",{
 		defaultSymbol: "thumbtack", // Fontawesome Symbol see http://fontawesome.io/cheatsheet/
 		showCompletion: true,
 		hideTime: false,
+		showPrefix: true,
 
 		urgency: 7, // 7 days
 		timeFormat: "relative",
@@ -133,15 +134,22 @@ Module.register("MMM-ToDo",{
 			var oneHour = oneMinute * 60;
 			var oneDay = oneHour * 24;
 
+			var datePrefix = ""
 			if(typeof this.tasks[i].due !== "undefined") {
 				var dateValue = this.tasks[i].due;
-				var datePrefix = this.translate("COMPLETE") + " ";
+				if (this.config.showPrefix){
+					datePrefix = this.translate("COMPLETE") + " ";
+				}
 			} else if(typeof this.tasks[i].start !== "undefined") {
-				var dateValue = this.tasks[i].start;
-				var datePrefix = this.translate("STARTED") + " ";
+				dateValue = this.tasks[i].start;
+				if (this.config.showPrefix){
+					datePrefix = this.translate("STARTED") + " ";
+				}
 			} else {
-				var dateValue = this.tasks[i].created;
-				var datePrefix = this.translate("CREATED") + " ";
+				dateValue = this.tasks[i].created;
+				if (this.config.showPrefix){
+					datePrefix = this.translate("CREATED") + " ";
+				}
 			}
 
 			if(!this.config.hideTime) {
